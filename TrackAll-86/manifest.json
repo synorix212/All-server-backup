@@ -1,0 +1,37 @@
+{
+    "name": "Betfair Score Tracker",
+    "version": "1.10.1",
+    "description": "Save Score",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "manifest_version": 2,
+    "page_action": {
+        "default_icon": "play.png",
+        "default_title": "Betfair Score Tracker"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.betfair.com/*"
+            ],
+            "js": [
+                "jquery.min.js",
+                "socket.io.js",
+                "content_base_data.js",
+                "betfair/content_get_scorecard_data.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "declarativeContent",
+        "tabs",
+        "activeTab",
+        "webNavigation"
+    ]
+}
